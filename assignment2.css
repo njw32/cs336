@@ -1,0 +1,20 @@
+ul{
+  text-align:center;
+  margin-top:2em;
+}
+li{
+  display:inline;
+  background-color:maroon;
+  color:white;
+  font-size: large;
+  padding: 1em;
+}
+div.image{
+  content:url(https://calvin.edu/global/images/calvin-university-1876.png);
+  margin: 0 auto;
+
+}
+form{
+  margin-right: 1em;
+  display: inline;
+}
