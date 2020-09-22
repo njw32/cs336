@@ -1,6 +1,6 @@
 ul{
   text-align:center;
-  margin-top:2em;
+  padding-top: 1em;
 }
 li{
   display:inline;
@@ -8,13 +8,24 @@ li{
   color:white;
   font-size: large;
   padding: 1em;
+  font: Arial;
+}
+li:hover{
+  color: yellow;
 }
 div.image{
   content:url(https://calvin.edu/global/images/calvin-university-1876.png);
   margin: 0 auto;
 
 }
-form{
-  margin-right: 1em;
+div.search{
+  margin-left: 45em;
+}
+div.header{
   display: inline;
+  margin: 0 auto;
+}
+div.text{
+  font-size: x-large;
+  text-align: center;
 }
