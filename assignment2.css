@@ -25,9 +25,9 @@ div.image{
 }
 /* search bar location */
 div.search{
-  margin-left: 75em;
-  margin-top: -2em;
-  margin-right: 15em;
+  margin-top: -1.7vw;
+  margin-right: 2vw;
+  margin-left: 70vw;
 }
 input{
   background-color: lightgrey;
