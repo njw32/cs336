@@ -29,6 +29,9 @@ div.search{
   margin-top: -2em;
   margin-right: 15em;
 }
+input{
+  background-color: lightgrey;
+}
 /* center header */
 div.header{
   display: inline;
