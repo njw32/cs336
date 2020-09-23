@@ -1,7 +1,9 @@
+/* Center header and pad */
 ul{
   text-align:center;
-  padding-top: 1em;
+  padding-top: 1.5em;
 }
+/* center, color, size, put list of header items in order */
 li{
   display:inline;
   background-color:maroon;
@@ -10,21 +12,30 @@ li{
   padding: 1em;
   font: Arial;
 }
+/* hover over header change to yellow */
 li:hover{
   color: yellow;
 }
+
+/* create and center image */
 div.image{
   content:url(https://calvin.edu/global/images/calvin-university-1876.png);
   margin: 0 auto;
 
 }
+/* search bar location */
 div.search{
-  margin-left: 45em;
+  margin-left: 75em;
+  margin-top: -2em;
+  margin-right: 15em;
 }
+/* center header */
 div.header{
   display: inline;
   margin: 0 auto;
 }
+
+/* below header text */
 div.text{
   font-size: x-large;
   text-align: center;
