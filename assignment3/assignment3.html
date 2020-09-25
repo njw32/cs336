@@ -1,0 +1,35 @@
+<html>
+
+<script>
+
+  function hintToggle() {
+    //what to do if hint is active/shown
+    if (document.getElementById("hintButton").innerHTML === "Close Hint") {
+      document.getElementById("hintText").innerHTML = "";
+      document.getElementById("hintButton").innerHTML = "Show Hint";
+    }
+    //what to do if hint is closed
+    else {
+      let hint = "this is a hint";
+      document.getElementById("hintText").innerHTML = hint;
+      document.getElementById("hintButton").innerHTML = "Close Hint";
+    }
+  }
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    Hint JS
+  </title>
+  <link rel="stylesheet" type="text/css" href="assignment3.css">
+</head>
+
+<body>
+  <div>
+    <button id="hintButton" type="button" onclick="hintToggle()">Show Hint</button>
+    <p id="hintText"></p>
+  </div>
+</body>
+
+</html>
