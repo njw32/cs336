@@ -1,3 +1,4 @@
+//class for storing data
 class DataService {
   constructor() { }
   data = [
@@ -23,6 +24,7 @@ class DataService {
       phoneNumber: "223 355 9009"
     }
   ]
+  //getter for list of objects
   getData(numRecords) {
     if (!numRecords) {
       return this.data;
@@ -37,6 +39,7 @@ class DataService {
   }
 }
 
+// testers:
 // let DS = new DataService();
 // console.log(DS.getData());
 // console.log(DS.getData(2));
