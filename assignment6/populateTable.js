@@ -1,22 +1,42 @@
 //create Data Service and call createRow for each piece of data
-const addDataRows = () => {
+async function addDataRows() {
   let DS = new DataService();
-  //test create Row call
-  //createRow(document.getElementById("rows"), { name: "Nathan", gender: "Male", address: "223 W St.", age: 19, phoneNumber: "234 343 3521" });
-  DS.getData().forEach(element => {
-    createRow(document.getElementById("rows"), element);
-  });
+  try {
+    await DS.fetchData();
+    //after awaiting fetch gets and parses odd object into its object
+    DS.getData().results.forEach(element => {
+      createRow(document.getElementById("rows"), {
+        name: element.name.first, gender: element.gender,
+        address: element.location.street.number + ' ' + element.location.street.name, age: element.dob.age,
+        phoneNumber: element.phone, photo: element.picture.thumbnail
+      });
+    });
+
+  } catch (err) {
+    console.log(err);
+  }
+
 };
 
 //takes parent element and object and appends in table format to html
 const createRow = ((parentElem, rowData) => {
   let row = document.createElement("tr");
 
-  for (let key in rowData) {
+  for (let item in rowData) {
+    let textnode = document.createTextNode(rowData[item]);
     let col = document.createElement("td");
-    let textnode = document.createTextNode(rowData[key]);
-    col.appendChild(textnode);
-    row.appendChild(col);
+    //deals with image differently by creating <img> html tag
+    if (item === "photo") {
+      let img = document.createElement("img");
+      let imgText = rowData[item];
+      img.src = imgText;
+      col.appendChild(img)
+      row.appendChild(col);
+      //all other string and int types dealt with and formatted in html
+    } else {
+      col.appendChild(textnode);
+      row.appendChild(col);
+    }
   }
   parentElem.appendChild(row);
 });
