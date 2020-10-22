@@ -2,12 +2,12 @@ import { DataService } from './dataService';
 import { Person } from './dataService';
 
 //create Data Service and call createRow for each piece of data
-async function addDataRows() {
+async function addDataRows(): Promise<void> {
   let DS = new DataService([]);
   try {
     await DS.fetchData();
     //after awaiting fetch gets and parses odd object into its object
-    DS.getData().results.forEach(element => {
+    DS.getData().forEach(element => {
       createRow(document.getElementById("rows"), {
         name: element.name.first, gender: element.gender,
         address: element.location.street.number + ' ' + element.location.street.name, age: element.dob.age,
@@ -22,7 +22,7 @@ async function addDataRows() {
 };
 
 //takes parent element and object and appends in table format to html
-const createRow = ((parentElem, rowData) => {
+const createRow = ((parentElem: HTMLElement, rowData: object): void => {
   let row = document.createElement("tr");
 
   for (let item in rowData) {
