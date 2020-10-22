@@ -1,0 +1,44 @@
+/* *{
+  border: 1px solid red;
+} */
+
+.card{
+  display: grid;
+  grid-template-areas:
+  'logo title'
+  'logo subtitle'
+  'logo button';
+  float: left;
+  padding: 10px;
+  grid-gap: 10px;
+}
+
+.logo{
+  grid-area: logo;
+
+}
+.image{
+  width: 5vw;
+  min-width: 60px;
+  border-radius: 8px;
+  box-shadow: 3px 3px rgb(56, 54, 54);
+}
+
+.title{
+  font-size: x-large;
+  font-weight: bold;
+  grid-area: title;
+}
+
+.subtitle{
+  grid-area: subtitle;
+  color: grey;
+}
+
+.monkeyButton{
+  grid-area: button;
+  background-color: darkgreen;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 3px 3px rgb(56, 54, 54);
+}
