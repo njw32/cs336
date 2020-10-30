@@ -33,7 +33,10 @@ export class AppComponent {
   };
   randomNum = () => {
     this.bigNumber = (Math.floor(Math.random() * 250) + 50).toString();
-
+  }
+  restart = () => {
+    this.prompt = "Enter your guess:"
+    this.responses = [];
   }
 }
 

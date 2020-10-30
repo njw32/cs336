@@ -2,10 +2,11 @@
 <label>Guess the sqrt() of
   <input [(ngModel)]="bigNumber" type="text">
 </label>
-<button (click)="randomNum()">Generate Random Number</button>
+<button class="button1" (click)="randomNum()">Generate Random Number</button>
 <ul>
   <li type="none" *ngFor="let response of responses">{{response}}</li>
 </ul>
 <label> {{prompt}}
-  <input [(ngModel)]="guess" type="text" (keyup.enter)="submit()">
+  <input *ngIf="prompt === 'Enter your guess:'" [(ngModel)]="guess" type="text" (keyup.enter)="submit()">
+  <button *ngIf="prompt === 'Restart Game'" (click)="restart()">Restart</button>
 </label>
