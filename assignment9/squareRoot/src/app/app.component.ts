@@ -27,6 +27,7 @@ export class AppComponent {
     else {
       feedback = guessNum + " is too low. Try again";
     }
+    this.guess = '';
     this.responses.push(feedback);
     console.log(feedback);
   };
