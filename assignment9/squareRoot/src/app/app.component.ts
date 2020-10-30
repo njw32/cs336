@@ -11,6 +11,7 @@ export class AppComponent {
   bigNumber: string = '16';
   guess: string = '1';
   responses: string[] = [];
+  prompt = "Enter your guess:"
   submit = () => {
     let guessNum: number = +this.guess;
     let root: number = +this.bigNumber;
@@ -18,6 +19,7 @@ export class AppComponent {
     let feedback: string;
     if (Math.abs(correct - guessNum) < correct * .01) {
       feedback = "You got it! The correct number was " + correct + ". It only took " + (this.responses.length + 1) + " tries.";
+      this.prompt = "Restart Game";
     }
     else if (guessNum > correct) {
       feedback = guessNum + " is too high. Try again";

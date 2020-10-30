@@ -6,6 +6,6 @@
 <ul>
   <li type="none" *ngFor="let response of responses">{{response}}</li>
 </ul>
-<label> Enter your guess:
+<label> {{prompt}}
   <input [(ngModel)]="guess" type="text" (keyup.enter)="submit()">
 </label>
