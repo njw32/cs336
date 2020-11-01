@@ -1,12 +1,15 @@
-<h1>Guess the Square Root Game</h1>
-<label>Guess the sqrt() of
-  <input [(ngModel)]="bigNumber" type="text">
-</label>
-<button class="button1" (click)="randomNum()">Generate Random Number</button>
-<ul>
-  <li type="none" *ngFor="let response of responses">{{response}}</li>
-</ul>
-<label> {{prompt}}
-  <input *ngIf="prompt === 'Enter your guess:'" [(ngModel)]="guess" type="text" (keyup.enter)="submit()">
-  <button *ngIf="prompt === 'Restart Game'" (click)="restart()">Restart</button>
-</label>
+<div>
+  <h1>Guess the Square Root Game</h1>
+  <label class="question">Guess the sqrt() of
+    <input [(ngModel)]="bigNumber" type="text">
+  </label>
+  <button class="button1" (click)="randomNum()">Generate Random Number</button>
+  <ul>
+    <li type="none" *ngFor="let response of responses">{{response}}</li>
+  </ul>
+  <label> {{prompt}}
+    <input class="guess" *ngIf="prompt === 'Enter your guess:'" [(ngModel)]="guess" type="text"
+      (keyup.enter)="submit()">
+    <button class="button2" *ngIf="prompt === 'Restart Game'" (click)="restart()">Restart</button>
+  </label>
+</div>

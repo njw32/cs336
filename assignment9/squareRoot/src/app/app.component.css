@@ -1,8 +1,10 @@
 button{
   margin-left: 2vw;
-  background-color: indianred;
+  background-color: lightcoral;
   outline-color: black;
   border-radius: 10px;
   font-weight: bold;
-
+}
+h1{
+  text-align: center;
 }
