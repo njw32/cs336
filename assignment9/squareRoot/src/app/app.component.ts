@@ -8,7 +8,7 @@ import { Component, ɵclearResolutionOfComponentResourcesQueue } from '@angular/
 
 export class AppComponent {
   title = 'squareRoot';
-  bigNumber: string = '16';
+  bigNumber: string = '50';
   guess: string = '1';
   responses: string[] = [];
   prompt = "Enter your guess:"
