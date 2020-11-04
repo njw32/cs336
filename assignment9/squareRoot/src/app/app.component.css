@@ -1,0 +1,13 @@
+button{
+  margin-left: 2vw;
+  background-color: lightcoral;
+  outline-color: black;
+  border-radius: 10px;
+  font-weight: bold;
+}
+h1{
+  text-align: center;
+}
+.question{
+  font-weight: bold;
+}
