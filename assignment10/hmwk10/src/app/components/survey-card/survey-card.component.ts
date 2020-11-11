@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-survey-card',
@@ -19,6 +19,12 @@ export class SurveyCardComponent implements OnInit {
   @Input() max: number = 100;
 
   @Input() units: string = '';
+
+  @Output() result = new EventEmitter<number>();
+
+  sliderChanged(eventObject) {
+    this.result.emit(eventObject.value);
+  }
 
 }
 

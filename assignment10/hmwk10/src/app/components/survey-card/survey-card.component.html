@@ -5,6 +5,6 @@
   </mat-card-header>
   <mat-card-subtitle>Choose your best answer, from {{min}} to {{max}} {{units}}</mat-card-subtitle>
   <mat-card-content>
-    <mat-slider min={{min}} max={{max}} step="1" value="10"></mat-slider>
+    <mat-slider (change)="sliderChanged($event)" min={{min}} max={{max}} step="1" value="10"></mat-slider>
   </mat-card-content>
 </mat-card>
