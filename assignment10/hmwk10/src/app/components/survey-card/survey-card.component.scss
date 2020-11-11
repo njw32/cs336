@@ -1,0 +1,17 @@
+mat-card{
+  max-width: 40vw;
+  min-width: 200px;
+  margin-left: 1vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  border-radius: 25px;
+}
+mat-card-content{
+  min-width: fit-content;
+}
+mat-slider{
+  width: stretch;
+}
+mat-icon{
+  margin-left: auto;
+}
