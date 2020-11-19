@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "chat-app-c2d2b"
+  },
+  "targets": {
+    "chat-app-c2d2b": {
+      "hosting": {
+        "chatApp": [
+          "chat-app-c2d2b"
+        ]
+      }
+    }
   }
 }
