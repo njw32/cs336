@@ -6,7 +6,7 @@
     <input type="text">
   </label>
 </div>
-<div *ngFor="let item of items | async">
+<div *ngFor="let item of items">
   <span class="timestamp"> {{item.timestamp.toDate() | date:"medium"}} </span>
   <span class="Handle"> {{localStorage.name}} </span>
   <span class="message">{{item.message}}</span>

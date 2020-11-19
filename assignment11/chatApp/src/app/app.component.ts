@@ -4,11 +4,13 @@ import { Observable } from 'rxjs';
 
 // to do:
 // interface for incoming collection
-// change valuechanges to subscribe
 // write to db
-// order messages
 // asssure local storage is functional
 // get messages color coded
+
+
+interface item { name: string, message: string, timestamp: any };
+//let FirestoreRec: [item];
 
 @Component({
   selector: 'app-root',
@@ -16,18 +18,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 
-//interface item { name: string, message: string, timestamp: firebase.Timestamp };
-//let FirestoreRec: [item];
+
+
 export class AppComponent {
-  items: Observable<any[]>;
+  items: any[];
   constructor(firestore: AngularFirestore) {
-    this.items = firestore.collection('Chats').valueChanges();
+    firestore.collection('Chats', ref => ref.orderBy('timestamp')).valueChanges().subscribe(res => {
+      this.items = res;
+    })
   }
-  public localStorage =
-    {
-      name: 'John',
-      color: 'blue'
-    }
+  public localStorage = { name: 'John', color: 'blue' };
   userMessage: string;
   title = 'chatApp';
 
