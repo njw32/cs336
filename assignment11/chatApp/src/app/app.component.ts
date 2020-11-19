@@ -7,12 +7,26 @@ import { Observable } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+//interface item { name: string, message: string, timestamp: firebase.Timestamp };
+//let FirestoreRec: [item];
 export class AppComponent {
   items: Observable<any[]>;
   constructor(firestore: AngularFirestore) {
     this.items = firestore.collection('Chats').valueChanges();
-    console.log(this.items);
   }
-
+  public localStorage =
+    {
+      name: 'John',
+      color: 'blue'
+    }
+  userMessage: string;
   title = 'chatApp';
+
+  submitMessage() {
+    console.log(this.userMessage.valueOf());
+    this.userMessage = '';
+  }
 }
+
+
