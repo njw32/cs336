@@ -6,8 +6,7 @@
     <input type="text">
   </label>
 </div>
-<ul>
-  <li *ngFor="let item of items | async">
-    {{item.message}}
-  </li>
-</ul>
+<div *ngFor="let item of items | async">
+  <span class="timestamp"> {{item.timestamp.toDate() | date:"medium"}}</span>
+  <span class="message">{{item.message}}</span>
+</div>
