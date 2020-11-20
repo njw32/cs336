@@ -32,6 +32,7 @@ export class AppComponent {
 
   localStorage = { name: 'John', color: 'blue' };
   userMessage: string;
+  name: string;
   title = 'chatApp';
 
   submitMessage() {
@@ -43,7 +44,10 @@ export class AppComponent {
       color: this.localStorage.color
     });
     this.userMessage = '';
+  }
 
+  changeName() {
+    this.localStorage.name = this.name;
   }
 }
 
