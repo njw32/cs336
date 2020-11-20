@@ -22,18 +22,28 @@ interface item { name: string, message: string, timestamp: any };
 
 export class AppComponent {
   items: any[];
-  constructor(firestore: AngularFirestore) {
-    firestore.collection('Chats', ref => ref.orderBy('timestamp')).valueChanges().subscribe(res => {
-      this.items = res;
-    })
+  constructor(private db: AngularFirestore) {
   }
-  public localStorage = { name: 'John', color: 'blue' };
+  async ngOnInit() {
+    this.db.collection('Chats', ref => ref.orderBy('timestamp')).valueChanges().subscribe(res => {
+      this.items = res;
+    });
+  }
+
+  localStorage = { name: 'John', color: 'blue' };
   userMessage: string;
   title = 'chatApp';
 
   submitMessage() {
     console.log(this.userMessage.valueOf());
+    this.db.collection('Chats').add({
+      name: this.localStorage.name,
+      message: this.userMessage.valueOf(),
+      timestamp: new Date(),
+      color: this.localStorage.color
+    });
     this.userMessage = '';
+
   }
 }
 
