@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 
 // to do:
 // interface for incoming collection
-// write to db
 // asssure local storage is functional
 // get messages color coded
 
