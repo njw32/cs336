@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 // get messages color coded
 
 
-interface item { name: string, message: string, timestamp: any };
+interface item { name: string; message: string; timestamp: any };
 //let FirestoreRec: [item];
 
 @Component({
@@ -29,10 +29,12 @@ export class AppComponent {
     });
   }
 
+
   localStorage = { name: 'John', color: 'blue' };
   userMessage: string;
   name: string;
   title = 'chatApp';
+
 
   submitMessage() {
     console.log(this.userMessage.valueOf());
