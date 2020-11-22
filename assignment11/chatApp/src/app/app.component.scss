@@ -8,7 +8,12 @@
   background-color: lightgray;
   font-size: x-large;
   text-align: center;
+  position: fixed;
+  top: 0px;
 }
 app-color-picker{
   display: inline-block;
+}
+.list{
+  margin-top: 1vw;
 }

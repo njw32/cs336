@@ -3,9 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 // to do:
-// CSS - sticky header
 // host on firebase
-// local Storage
 
 interface FirestoreRec { name: string; message: string; timestamp: any; color: string; };
 
