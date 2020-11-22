@@ -1,0 +1,16 @@
+<div class="header">
+  <label>Change Name
+    <input type="text" [(ngModel)]="name" (keyup.enter)="changeName()">
+  </label>
+  <label> Pick a color
+    <app-color-picker (result)="gotResult($event)"></app-color-picker>
+  </label>
+</div>
+<div class="list" *ngFor="let item of items">
+  <span class="timestamp"> {{item.timestamp.toDate() | date:"medium"}} </span>
+  <span class="Handle"> {{item.name}} </span>
+  <span class="message" style="color: {{item.color}}">{{item.message}}</span>
+</div>
+<label>Enter a message:
+  <input [(ngModel)]="userMessage" type="text" (keyup.enter)="submitMessage()">
+</label>
