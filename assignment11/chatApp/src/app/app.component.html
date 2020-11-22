@@ -3,7 +3,7 @@
     <input type="text" [(ngModel)]="name" (keyup.enter)="changeName()">
   </label>
   <label>Pick a color
-    <app-color-picker></app-color-picker>
+    <app-color-picker (result)="gotResult($event)"></app-color-picker>
   </label>
 </div>
 <div *ngFor="let item of items">

@@ -30,10 +30,14 @@ export class AppComponent {
   }
 
 
-  localStorage = { name: 'John', color: 'blue' };
+  public localStorage = { name: 'John', color: 'blue' };
   userMessage: string;
   name: string;
   title = 'chatApp';
+
+  gotResult(result) {
+    this.localStorage.color = result;
+  }
 
 
   submitMessage() {
