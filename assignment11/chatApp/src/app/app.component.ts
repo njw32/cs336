@@ -29,7 +29,7 @@ export class AppComponent {
   }
 
 
-  public localStorage = { name: 'John', color: 'blue' };
+  public localStorage = { name: 'John', color: '#2889e9' };
   userMessage: string;
   name: string;
   title = 'chatApp';
@@ -40,14 +40,11 @@ export class AppComponent {
 
 
   submitMessage() {
-    let dbDocument: FirestoreRec = {
+    this.db.collection('Chats').add({
       name: this.localStorage.name,
       message: this.userMessage.valueOf(),
       timestamp: new Date(),
       color: this.localStorage.color
-    }
-    this.db.collection('Chats').add({
-      dbDocument
     });
     this.userMessage = '';
   }
