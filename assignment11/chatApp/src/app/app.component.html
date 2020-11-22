@@ -2,7 +2,7 @@
   <label>Enter your name
     <input type="text" [(ngModel)]="name" (keyup.enter)="changeName()">
   </label>
-  <label>Pick a color
+  <label> Pick a color
     <app-color-picker (result)="gotResult($event)"></app-color-picker>
   </label>
 </div>

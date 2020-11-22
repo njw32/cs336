@@ -3,7 +3,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 // to do:
-// interface for incoming collection
 // CSS
 
 interface FirestoreRec { name: string; message: string; timestamp: any; color: string; };
