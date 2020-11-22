@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
+//running at https://chat-app-c2d2b.web.app/
 //interface for outgoing data
 interface FirestoreRec { name: string; message: string; timestamp: any; color: string; };
 
