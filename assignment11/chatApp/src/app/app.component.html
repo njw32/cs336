@@ -1,5 +1,5 @@
 <div class="header">
-  <label>Enter your name
+  <label>Change Name
     <input type="text" [(ngModel)]="name" (keyup.enter)="changeName()">
   </label>
   <label> Pick a color
@@ -11,6 +11,6 @@
   <span class="Handle"> {{item.name}} </span>
   <span class="message" style="color: {{item.color}}">{{item.message}}</span>
 </div>
-<label>Enter a message as {{localStorage.name}}:
+<label>Enter a message:
   <input [(ngModel)]="userMessage" type="text" (keyup.enter)="submitMessage()">
 </label>

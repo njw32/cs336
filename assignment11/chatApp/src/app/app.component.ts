@@ -3,7 +3,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 // to do:
-// CSS
+// CSS - sticky header
+// host on firebase
+// local Storage
 
 interface FirestoreRec { name: string; message: string; timestamp: any; color: string; };
 
@@ -25,29 +27,27 @@ export class AppComponent {
     });
   }
 
-
-  public localStorage = { name: 'John', color: '#2889e9' };
   userMessage: string;
   name: string;
   title = 'chatApp';
 
   gotResult(result) {
-    this.localStorage.color = result;
+    localStorage.setItem("color", result);
   }
 
 
   submitMessage() {
     this.db.collection<FirestoreRec>('Chats').add({
-      name: this.localStorage.name,
+      name: localStorage.getItem("name"),
       message: this.userMessage.valueOf(),
       timestamp: new Date(),
-      color: this.localStorage.color
+      color: localStorage.getItem("color")
     });
     this.userMessage = '';
   }
 
   changeName() {
-    this.localStorage.name = this.name;
+    localStorage.setItem("name", this.name);
   }
 }
 
