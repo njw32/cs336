@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 
 // to do:
 // interface for incoming collection
-// asssure local storage is functional
-// get messages color coded
-
+// CSS
 
 interface FirestoreRec { name: string; message: string; timestamp: any; color: string; };
 
@@ -40,7 +38,7 @@ export class AppComponent {
 
 
   submitMessage() {
-    this.db.collection('Chats').add({
+    this.db.collection<FirestoreRec>('Chats').add({
       name: this.localStorage.name,
       message: this.userMessage.valueOf(),
       timestamp: new Date(),
