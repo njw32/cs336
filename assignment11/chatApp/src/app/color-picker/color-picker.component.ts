@@ -29,6 +29,7 @@ export class ColorPickerComponent implements OnInit {
     // console.log(color);
     // console.log(rgba);
 
+    //output to app.component
     this.result.emit(color);
 
     return this.cpService.rgbaToCmyk(rgba);

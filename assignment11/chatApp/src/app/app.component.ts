@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
-// to do:
-// host on firebase
-
+//interface for outgoing data
 interface FirestoreRec { name: string; message: string; timestamp: any; color: string; };
 
 @Component({
@@ -19,6 +17,8 @@ export class AppComponent {
   items: any[];
   constructor(private db: AngularFirestore) {
   }
+
+  //update chat items and order by timestamp
   async ngOnInit() {
     this.db.collection('Chats', ref => ref.orderBy('timestamp')).valueChanges().subscribe(res => {
       this.items = res;
@@ -29,11 +29,12 @@ export class AppComponent {
   name: string;
   title = 'chatApp';
 
+  //set color localStorage -> get from color picker component
   gotResult(result) {
     localStorage.setItem("color", result);
   }
 
-
+  //write to db
   submitMessage() {
     this.db.collection<FirestoreRec>('Chats').add({
       name: localStorage.getItem("name"),
@@ -44,6 +45,7 @@ export class AppComponent {
     this.userMessage = '';
   }
 
+  //change local storage name
   changeName() {
     localStorage.setItem("name", this.name);
   }
